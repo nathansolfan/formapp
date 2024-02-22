@@ -1,13 +1,7 @@
 import "./App.css";
 
 function App() {
-
-  const handleSubmit = () {
-    fetch()
-  }
-
-
-
+  const handleSubmit = () => {};
   return (
     <form action="">
       <label>Register to APP</label>
