@@ -1,18 +1,30 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Prerequisites
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
+Node.js and npm (Node Package Manager). You can download them from here.
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+Install dependencies for the server and client with:
+
+### `npm install`
+
+Running the Application
+Start the Backend Server
+Navigate back to the root of the project directory.
+
+Start the Express server:
+
+### `node server.js`
+
+Start the React app:
+
+### `npm start`
 
 ### `npm test`
 
