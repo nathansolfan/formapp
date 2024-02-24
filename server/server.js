@@ -22,6 +22,22 @@ app.post("/register", (req, res) => {
       res.status(500).json({ message: "Error reading the dAta" });
       return;
     }
+    // parse to Json
+    const users = JSON.parse(data.toString() || "[]");
+    // check if email exist
+    const existingUser = users.find((user) => user.email === email);
+    if (existingUser) {
+      res.status(400).json({ message: "User exists already" });
+    }
+    // add new user .push()
+    users.push({ email, password });
+    // write the updated data back to users.json
+    fs.writeFile(userFilePath, JSON.stringify(users, null, 2), (err) => {
+      if (err) {
+        res.status(500).json({ message: "Error writing user data" });
+        return;
+      }
+    });
   });
 
   console.log(`Registering user with ${email}, and ${password}`);
