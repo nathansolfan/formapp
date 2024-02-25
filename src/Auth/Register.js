@@ -11,7 +11,7 @@ export default function Register() {
         },
         body: JSON.stringify({ email, password }),
       });
-      if (!response) {
+      if (!response.ok) {
         throw new Error("Network response was not ok");
       }
       const data = await response.json;
@@ -20,5 +20,10 @@ export default function Register() {
       console.error("There is a problem here");
     }
   };
-  return <Form />;
+  return (
+    <div>
+      <h2>Register</h2>
+      <Form onSubmit={handleRegistration} buttonText="Register" />
+    </div>
+  );
 }

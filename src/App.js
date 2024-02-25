@@ -1,7 +1,12 @@
 import "./App.css";
+import Register from "./Auth/Register";
 
 function App() {
-  return;
+  return (
+    <div>
+      <Register />
+    </div>
+  );
 }
 
 export default App;
