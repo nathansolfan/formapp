@@ -11,7 +11,16 @@ export default function Login() {
         },
         body: JSON.stringify({ email, password }),
       });
-    } catch (error) {}
+
+      if (!response.ok) {
+        throw new Error("Network response not ok");
+      }
+
+      const data = await response.json;
+      console.log(data, "login ok");
+    } catch (error) {
+      console.error("Login failed");
+    }
   };
   return (
     <div>
