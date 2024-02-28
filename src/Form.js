@@ -4,6 +4,7 @@ import { useState } from "react";
 export default function Form({ onSubmit, buttonText }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit({ email, password });

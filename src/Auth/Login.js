@@ -24,6 +24,7 @@ export default function Login() {
   };
   return (
     <div>
+      <h1>Login</h1>
       <Form onSubmit={handleLogin} buttonText="Button Login" />
     </div>
   );
