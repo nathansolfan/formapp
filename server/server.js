@@ -3,13 +3,27 @@ const cors = require("cors");
 // FileSystem and path
 const fs = require("fs");
 const path = require("path");
-
+// JWT
+const jwt = require("jsonwebtoken");
 const app = express();
 const port = 3001;
 
 app.use(cors());
 app.use(express.json());
 
+// Dfine the route for /login
+// app.post("/login", async (req, res) => {
+//   const {email, password} = req.body
+
+// // for when user is auth
+//   if(){
+//     const user = { email}
+//     const acessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '1hr'})
+//     res.json({acessToken})
+//   } else{
+//     res.status(401).send("Email or password is incorrect")
+//   }
+// })
 // Define the POST route for /register
 app.post("/register", (req, res) => {
   const { email, password } = req.body;
