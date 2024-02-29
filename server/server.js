@@ -11,7 +11,12 @@ const port = 3001;
 app.use(cors());
 app.use(express.json());
 
-// Dfine the route for /login
+// Import the middleware
+const AuthenticateToken = require("./Middleware");
+app.get("/protected", AuthenticateToken, (req, res) => {
+  res.json({ message: "Access to protected data" });
+});
+// Define the route for /login
 // app.post("/login", async (req, res) => {
 //   const {email, password} = req.body
 
