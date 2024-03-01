@@ -16,7 +16,7 @@ export default function Login() {
         throw new Error("Network response not ok");
       }
 
-      const data = await response.json;
+      const data = await response.json();
       console.log("JWT", data.accessToken);
       localStorage.setItem("accessToken", data.accessToken);
       console.log(data, "login ok");

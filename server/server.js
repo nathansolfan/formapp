@@ -78,8 +78,6 @@ app.post("/register", (req, res) => {
   });
 
   console.log(`Registering user with ${email}, and ${password}`);
-
-  res.json({ message: "Registration successful" });
 });
 
 app.listen(port, () => {
