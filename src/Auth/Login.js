@@ -17,6 +17,7 @@ export default function Login() {
       }
 
       const data = await response.json;
+      console.log("JWT", data.accessToken);
       localStorage.setItem("accessToken", data.accessToken);
       console.log(data, "login ok");
     } catch (error) {
