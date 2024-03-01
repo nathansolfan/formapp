@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 
-export default function AuthenticateToken(req, res, next) {
+function authenticateToken(req, res, next) {
   const authHeader = req.headers["authorization"];
   const token = authHeader && authHeader.split(" ")[1];
   if (token == null) return res.sendStatus(401);
@@ -11,3 +11,5 @@ export default function AuthenticateToken(req, res, next) {
     next();
   });
 }
+
+module.exports = authenticateToken; // Use module.exports for CommonJS

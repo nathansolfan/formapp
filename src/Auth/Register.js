@@ -17,6 +17,7 @@ export default function Register() {
       }
 
       const data = await response.json();
+
       console.log(data, "Registration ok");
     } catch (error) {
       console.error("There is a problem here");

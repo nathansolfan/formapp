@@ -17,6 +17,7 @@ export default function Login() {
       }
 
       const data = await response.json;
+      localStorage.setItem("accessToken", data.accessToken);
       console.log(data, "login ok");
     } catch (error) {
       console.error("Login failed");

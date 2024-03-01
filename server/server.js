@@ -11,25 +11,42 @@ const port = 3001;
 app.use(cors());
 app.use(express.json());
 
-// Import the middleware
+// MIDDLEWARE
 const AuthenticateToken = require("./Middleware");
 app.get("/protected", AuthenticateToken, (req, res) => {
   res.json({ message: "Access to protected data" });
 });
-// Define the route for /login
-// app.post("/login", async (req, res) => {
-//   const {email, password} = req.body
 
-// // for when user is auth
-//   if(){
-//     const user = { email}
-//     const acessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '1hr'})
-//     res.json({acessToken})
-//   } else{
-//     res.status(401).send("Email or password is incorrect")
-//   }
-// })
-// Define the POST route for /register
+// LOGIN
+app.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+
+  const userFilePath = path.join(__dirname, "users.json");
+
+  fs.readFile(userFilePath, (error, data) => {
+    if (error) {
+      return res
+        .status(500)
+        .json({ message: "Error reading the user Data Folder" });
+    }
+
+    const users = JSON.parse(data.toString() || "[]");
+    const user = users.find((u) => u.email === email);
+
+    if (user && user.password === password) {
+      const accessToken = jwt.sign(
+        { email: user.email },
+        process.env.ACCESS_TOKEN_SECRET,
+        { expiresIn: "1hr" }
+      );
+      res.json({ accessToken });
+    } else {
+      res.status(401).json({ message: "Email or PW incorrect" });
+    }
+  });
+});
+
+// REGISTER
 app.post("/register", (req, res) => {
   const { email, password } = req.body;
 
@@ -41,6 +58,7 @@ app.post("/register", (req, res) => {
       res.status(500).json({ message: "Error reading the dAta" });
       return;
     }
+    res.json({ message: "Registration OK!!" });
     // parse to Json
     const users = JSON.parse(data.toString() || "[]");
     // check if email exist
