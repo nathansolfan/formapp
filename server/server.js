@@ -5,6 +5,7 @@ const fs = require("fs");
 const path = require("path");
 // JWT
 const jwt = require("jsonwebtoken");
+const ACCESS_TOKEN_SECRET = "mykey";
 const app = express();
 const port = 3001;
 
@@ -34,11 +35,9 @@ app.post("/login", async (req, res) => {
     const user = users.find((u) => u.email === email);
 
     if (user && user.password === password) {
-      const accessToken = jwt.sign(
-        { email: user.email },
-        process.env.ACCESS_TOKEN_SECRET,
-        { expiresIn: "1hr" }
-      );
+      const accessToken = jwt.sign({ email: user.email }, ACCESS_TOKEN_SECRET, {
+        expiresIn: "1hr",
+      });
       res.json({ accessToken });
     } else {
       res.status(401).json({ message: "Email or PW incorrect" });
@@ -58,7 +57,7 @@ app.post("/register", (req, res) => {
       res.status(500).json({ message: "Error reading the dAta" });
       return;
     }
-    res.json({ message: "Registration OK!!" });
+
     // parse to Json
     const users = JSON.parse(data.toString() || "[]");
     // check if email exist
