@@ -9,6 +9,7 @@ import Login from "./Auth/Login";
 import Logout from "./Auth/Logout";
 import Register from "./Auth/Register";
 import Home from "./Home";
+import Navbar from "./Navbar";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
 
       <Router>
         <div>
+          <Navbar />
           <Routes>
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
