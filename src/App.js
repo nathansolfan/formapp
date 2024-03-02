@@ -1,14 +1,30 @@
 import "./App.css";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import Login from "./Auth/Login";
 import Logout from "./Auth/Logout";
 import Register from "./Auth/Register";
+import Home from "./Home";
 
 function App() {
   return (
     <div>
-      <Register />
-      <Login />
-      <Logout />
+      <div>Hello</div>
+
+      <Router>
+        <div>
+          <Routes>
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/logout" element={<Logout />} />
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </div>
+      </Router>
     </div>
   );
 }
