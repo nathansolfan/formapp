@@ -15,16 +15,20 @@ export default function Login() {
       if (!response.ok) {
         throw new Error("Network response not ok");
       }
-
       const data = await response.json();
+
+      // JWT LOGIC
       console.log("JWT", data.accessToken);
-      // sotre it using localStorage
+      // store it using localStorage
       localStorage.setItem("accessToken", data.accessToken);
+      // store email
+      localStorage.setItem("userEmail", email);
       console.log(data, "login ok");
     } catch (error) {
       console.error("Login failed");
     }
   };
+
   return (
     <div>
       <h1>Login</h1>

@@ -12,6 +12,8 @@ import Home from "./Home";
 import Navbar from "./Navbar";
 
 function App() {
+  const userEmail = localStorage.getItem("userEmail");
+
   return (
     <div>
       <div>Hello</div>
@@ -21,6 +23,8 @@ function App() {
       <Router>
         <div>
           <Navbar />
+          {userEmail && <div> Welcome, {userEmail} </div>}
+
           <Routes>
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
