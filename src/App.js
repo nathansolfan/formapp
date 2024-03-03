@@ -16,6 +16,8 @@ function App() {
     <div>
       <div>Hello</div>
 
+      <br />
+
       <Router>
         <div>
           <Navbar />
