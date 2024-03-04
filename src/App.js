@@ -10,6 +10,7 @@ import Logout from "./Auth/Logout";
 import Register from "./Auth/Register";
 import Home from "./Home";
 import Navbar from "./Navbar";
+import UserProfile from "./Auth/UserProfile";
 
 function App() {
   const userEmail = localStorage.getItem("userEmail");
@@ -23,8 +24,7 @@ function App() {
       <Router>
         <div>
           <Navbar />
-          {userEmail && <div> Welcome, {userEmail} </div>}
-
+          <UserProfile />
           <Routes>
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
