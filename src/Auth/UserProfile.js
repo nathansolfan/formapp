@@ -9,9 +9,6 @@ export default function UserProfile() {
   }, []);
 
   return (
-    <div>
-      {" "}
-      {userEmail ? <p>Welcome, {userEmail}</p> : <p>Please log in</p>}{" "}
-    </div>
+    <div>{userEmail ? <p>Welcome, {userEmail}</p> : <p>Please log in</p>}</div>
   );
 }

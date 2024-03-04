@@ -13,8 +13,6 @@ import Navbar from "./Navbar";
 import UserProfile from "./Auth/UserProfile";
 
 function App() {
-  const userEmail = localStorage.getItem("userEmail");
-
   return (
     <div>
       <div>Hello</div>
