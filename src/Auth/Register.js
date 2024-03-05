@@ -1,5 +1,5 @@
 import React from "react";
-import Form from "../Form";
+import Form from "../Components/Form";
 
 export default function Register() {
   const handleRegistration = async ({ email, password }) => {

@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import "./Form.css";
 
 export default function Form({ onSubmit, buttonText }) {
   const [email, setEmail] = useState("");
@@ -11,7 +12,7 @@ export default function Form({ onSubmit, buttonText }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form-container">
       <label>Enter email:</label>
       <input
         type="text"
@@ -19,17 +20,21 @@ export default function Form({ onSubmit, buttonText }) {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Type your email"
+        className="form-input"
       />
       <label>Enter password:</label>
       <input
-        type="text"
+        type="password"
         required
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Type your password"
+        className="form-input"
       />
 
-      <button type="submit">{buttonText}</button>
+      <button type="submit" className="form-button">
+        {buttonText}
+      </button>
     </form>
   );
 }

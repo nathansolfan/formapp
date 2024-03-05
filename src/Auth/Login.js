@@ -1,5 +1,5 @@
 import React from "react";
-import Form from "../Form";
+import Form from "../Components/Form";
 
 export default function Login({ onUserChange }) {
   const handleLogin = async ({ email, password }) => {

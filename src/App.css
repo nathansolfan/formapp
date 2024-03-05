@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #282c34; /* Consider making this a variable or a more universal class if used in multiple components */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
