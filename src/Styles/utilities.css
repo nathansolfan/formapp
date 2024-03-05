@@ -1,0 +1,20 @@
+/* utilities.css */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .heading {
+    font-size: 2rem; /* 32px */
+    margin-bottom: 0.5em;
+  }
+  
+  .paragraph {
+    font-size: 1rem; /* 16px */
+    margin-bottom: 1em;
+    text-align: justify;
+  }
+  
+  /* Add more utility classes as needed */
+  

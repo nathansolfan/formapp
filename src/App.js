@@ -1,4 +1,5 @@
 import "./App.css";
+import "./Styles/utilities.css";
 import {
   BrowserRouter as Router,
   Route,
@@ -9,7 +10,7 @@ import Login from "./Auth/Login";
 import Logout from "./Auth/Logout";
 import Register from "./Auth/Register";
 import Home from "./Home";
-import Navbar from "./Navbar";
+import Navbar from "./Components/Navbar";
 import UserProfile from "./Auth/UserProfile";
 import { useState } from "react";
 

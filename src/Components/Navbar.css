@@ -1,0 +1,19 @@
+/* Navbar.css */
+.navbar-container {
+    background-color: #b3b6ba; /* Primary color */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-around; /* Distribute links evenly */
+    align-items: center;
+  }
+  
+  .navbar-link {
+    color: #ffffff; /* Light color for contrast */
+    text-decoration: none; /* Remove underline from links */
+    padding: 10px;
+  }
+  
+  .navbar-link:hover {
+    text-decoration: underline; /* Add underline on hover for visual feedback */
+  }
+  
