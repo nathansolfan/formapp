@@ -11,8 +11,15 @@ import Register from "./Auth/Register";
 import Home from "./Home";
 import Navbar from "./Navbar";
 import UserProfile from "./Auth/UserProfile";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [userEmail, setUserEmail] = useState("");
+
+  useEffect(() => {
+    setUserEmail(localStorage.getItem("userEmail"));
+  });
+
   return (
     <div>
       <div>Hello</div>
