@@ -1,14 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-export default function UserProfile() {
-  const [userEmail, setUserEmail] = useState("");
-
-  useEffect(() => {
-    const email = localStorage.getItem("userEmail");
-    setUserEmail(email);
-  }, []);
-
-  return (
-    <div>{userEmail ? <p>Welcome, {userEmail}</p> : <p>Please log in</p>}</div>
-  );
+export default function UserProfile({ email }) {
+  // Accept email as prop
+  return <div>{email ? <p>Welcome, {email}</p> : <p>Please log in</p>}</div>;
 }

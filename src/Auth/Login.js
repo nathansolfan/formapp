@@ -1,7 +1,7 @@
 import React from "react";
 import Form from "../Form";
 
-export default function Login() {
+export default function Login({ onUserChange }) {
   const handleLogin = async ({ email, password }) => {
     try {
       const response = await fetch("http://localhost:3001/login", {
@@ -21,9 +21,11 @@ export default function Login() {
       console.log("JWT", data.accessToken);
       // store it using localStorage
       localStorage.setItem("accessToken", data.accessToken);
-      // store email
-      localStorage.setItem("userEmail", email);
-      console.log(data, "login ok");
+      // // store email
+      // localStorage.setItem("userEmail", email);
+      // console.log(data, "login ok");
+      // Notify App.js about the email change
+      onUserChange(email);
     } catch (error) {
       console.error("Login failed");
     }

@@ -18,7 +18,16 @@ function App() {
 
   useEffect(() => {
     setUserEmail(localStorage.getItem("userEmail"));
-  });
+  }, []);
+
+  const handleUserChange = (email) => {
+    if (email) {
+      localStorage.setItem("userEmail", email);
+    } else {
+      localStorage.removeItem("userEmail");
+    }
+    setUserEmail(email);
+  };
 
   return (
     <div>
@@ -29,11 +38,17 @@ function App() {
       <Router>
         <div>
           <Navbar />
-          <UserProfile />
+          <UserProfile email={userEmail} />
           <Routes>
             <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/logout" element={<Logout />} />
+            <Route
+              path="/login"
+              element={<Login onUserChange={handleUserChange} />}
+            />
+            <Route
+              path="/logout"
+              element={<Logout onUserChange={handleUserChange} />}
+            />
             <Route path="/" element={<Home />} />
           </Routes>
         </div>
