@@ -14,11 +14,7 @@ import UserProfile from "./Auth/UserProfile";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [userEmail, setUserEmail] = useState("");
-
-  useEffect(() => {
-    setUserEmail(localStorage.getItem("userEmail"));
-  }, []);
+  const [userEmail, setUserEmail] = useState(localStorage.getItem("userEmail"));
 
   const handleUserChange = (email) => {
     if (email) {
