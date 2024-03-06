@@ -1,32 +1,35 @@
 # Getting Started with Create React App
 
-Prerequisites
+# React Authentication App
 
-Node.js and npm (Node Package Manager). You can download them from here.
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This project is a simple React application that demonstrates user authentication, including registration, login, and logout functionalities. It utilizes React Router for navigation and Express.js for the backend server, showcasing how to manage authenticated routes in a React application.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Prerequisites
 
-Install dependencies for the server and client with:
+- **Node.js**: Ensure you have Node.js installed on your system. You can download it from [here](https://nodejs.org/).
+- **npm**: Comes with Node.js, used for managing dependencies.
+
+## Setup and Installation
+
+1. **Clone the repository**:
+
+2. **Install Dependencies**:
+   Navigate to the project directory and install the required dependencies:
 
 ### `npm install`
 
-Running the Application
-Start the Backend Server
-Navigate back to the root of the project directory.
+3. **Start the Backend Server**:
+   Navigate to the server directory and start the Express server:
 
-Start the Express server:
+### `cd server`
 
 ### `node server.js`
 
-Start the React app:
+3. **Start the REACT App**:
 
 ### `npm start`
-
-### `npm test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
